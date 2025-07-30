@@ -8,8 +8,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(105, 185, 105);
     z-index: 1000;
+    background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    border-bottom: 2.5px solid #237a57;
 }
 
 .header-data {
@@ -17,29 +19,53 @@
     font-size: 50px;
     font-weight: 700;
     text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.10);
+    font-family: 'Montserrat', 'Roboto', sans-serif;
     padding: 20px 0;
-    /* Vertical padding for height of bar */
 }
 
 /* Push content down by header height (50px font + 20px top + 20px bottom = 90px)
    Use a little extra for safety */
 .content {
-    max-width: 900px;
-    margin: 10px auto 0 auto;
-    padding: 60px 10px 0 10px;
+    padding: 0px 10px 0 10px; // Top padding = header height (adjust if header height changes)
+    max-width: 980px;
+    margin: 32px auto 0 auto;
+}
+
+.table-wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 3px 14px #2cad6280;
+  overflow-x: auto;
 }
 
 table {
-    width: 100%;
+  min-width: 700px;
+  width: 100%;
+  border-radius: 6px;
 }
 
-th,
-td {
-    padding: 18px 24px;
-    text-align: left;
+th, td {
+  font-size: 18px;
+  color: #29323c;
+  vertical-align: middle;
+  padding: 18px 24px;
 }
 
-button {
-    margin-right: 8px;
-    min-width: 100px;
+tr.mat-row:hover {
+  background: #f0f7ff !important;
+  transition: background 0.18s;
+}
+
+button[mat-button] {
+  margin-right: 10px;
+  min-width: 90px;
+  transition: box-shadow 0.18s, transform 0.11s;
+}
+button[mat-button]:hover {
+  box-shadow: 0 4px 18px #519c6921;
+  transform: scale(1.04);
 }

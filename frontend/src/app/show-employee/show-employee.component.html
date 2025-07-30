@@ -1,0 +1,53 @@
+<div class="main">
+  <header>
+    <div class="header-main-container">
+      <div class="header-data">ALL EMPLOYEES</div>
+    </div>
+  </header>
+  <div class="content">
+    <table
+      mat-table
+      [dataSource]="users"
+      class="mat-elevation-z2"
+      style="width: 100%"
+    >
+      <!-- Firstname Column -->
+      <ng-container matColumnDef="firstname">
+        <th mat-header-cell *matHeaderCellDef>Firstname</th>
+        <td mat-cell *matCellDef="let user">{{ user.firstName }}</td>
+      </ng-container>
+
+      <!-- Lastname Column -->
+      <ng-container matColumnDef="lastname">
+        <th mat-header-cell *matHeaderCellDef>Lastname</th>
+        <td mat-cell *matCellDef="let user">{{ user.lastName }}</td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let user">{{ user.emailId }}</td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let user; let i = index">
+          <button mat-button color="warn" (click)="deleteUser(i)">
+            <mat-icon>delete</mat-icon> Delete
+          </button>
+          <button mat-button color="primary" (click)="updateUser(user)">
+            <mat-icon>edit</mat-icon> Update
+          </button>
+          <button mat-button color="accent" (click)="viewDetails(user)">
+            <mat-icon>info</mat-icon> Details
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Header and Row Declarations -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+.main {
+    margin: 0;
+    padding: 0;
+}
+
+.header-main-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(105, 185, 105);
+    z-index: 1000;
+}
+
+.header-data {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px 0;
+    /* Vertical padding for height of bar */
+}
+
+/* Push content down by header height (50px font + 20px top + 20px bottom = 90px)
+   Use a little extra for safety */
+.content {
+    max-width: 900px;
+    margin: 10px auto 0 auto;
+    padding: 60px 10px 0 10px;
+}
+
+table {
+    width: 100%;
+}
+
+th,
+td {
+    padding: 18px 24px;
+    text-align: left;
+}
+
+button {
+    margin-right: 8px;
+    min-width: 100px;
+}

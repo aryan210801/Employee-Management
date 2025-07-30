@@ -1,6 +1,24 @@
-<nav style="margin: 16px;">
-  <button routerLink="/add-employee" mat-raised-button color="primary">Add Employee</button>
-  <button routerLink="/show-employee" mat-raised-button color="accent">Show Employees</button>
-</nav>
+<mat-toolbar color="primary" class="app-toolbar">
+  <mat-icon>business_center</mat-icon>
+  <span class="toolbar-title">Employee Manager</span>
+  <span class="spacer"></span>
+  <button mat-stroked-button color="accent" routerLink="/add-employee">
+    <mat-icon>person_add</mat-icon>
+    Add Employee
+  </button>
+  <button
+    mat-raised-button
+    color="accent"
+    routerLink="/show-employee"
+    class="cta-employee-btn"
+  >
+    <mat-icon class="left-icon">group</mat-icon>
+    View Employees
+  </button>
+</mat-toolbar>
 
 <router-outlet></router-outlet>
+
+<footer class="mat-elevation-z2 footer">
+  <span>© 2025 Aryan Groups — Powered by Angular & Material</span>
+</footer>

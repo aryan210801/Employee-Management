@@ -1,0 +1,214 @@
+/* Make sure html and body fill entire height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page wrapper uses flexbox to push footer to bottom */
+.page-wrapper {
+  min-height: 100vh;  /* full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Toolbar (Header) Styles */
+.app-toolbar {
+  height: 64px;
+  padding: 0 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  background: inherit; /* Angular Material primary color */
+}
+
+.app-toolbar mat-icon {
+  margin-right: 12px;
+  font-size: 2.4rem;
+  color: #d0e7d9;
+  vertical-align: middle;
+}
+
+.toolbar-title {
+  font-size: 1.5rem;
+  color: #4be258;
+  letter-spacing: 2.5px;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  font-weight: 700;
+  user-select: none;
+}
+
+.app-toolbar button {
+  margin-left: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.app-toolbar button:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Call-To-Action Employee Button */
+.cta-employee-btn {
+  padding: 14px 34px;
+  font-size: 1.14rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 7px;
+  box-shadow: 0 3px 10px rgba(67, 206, 162, 0.13);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition:
+    background 0.28s,
+    color 0.21s,
+    box-shadow 0.21s,
+    transform 0.15s cubic-bezier(.65, 2.1, .23, .91);
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(90deg, #43cea2cc 0%, #185a9dd4 100%);
+    color: #fff;
+    box-shadow: 0 8px 30px rgba(67, 206, 162, 0.24);
+    transform: translateY(-2px) scale(1.04);
+    outline: none;
+  }
+
+  mat-icon.left-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+}
+
+
+/* Hero Section Styles */
+.frontpage-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 2px 20px #56e6a850;
+  margin: 36px auto 24px auto;
+  padding: 48px 60px 48px 50px;
+  max-width: 1160px;
+  position: relative;
+
+  .hero-content {
+    flex: 1 1 50%;
+
+    h1 {
+      font-weight: 900;
+      font-size: 3rem;
+      margin-bottom: 24px;
+      line-height: 1.3;
+      text-shadow: 1.2px 1.8px 3px rgba(0, 0, 0, 0.16);
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: #c8f5de;
+      margin-bottom: 32px;
+      line-height: 1.6;
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 5px rgba(20, 100, 60, 0.2);
+    }
+
+    a[mat-raised-button] {
+      margin-top: 28px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      padding: 12px 32px;
+      font-size: 1.1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 12px rgba(67, 206, 162, 0.28);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      &:hover {
+        transform: scale(1.07);
+        box-shadow: 0 6px 20px rgba(67, 206, 162, 0.45);
+      }
+    }
+  }
+
+  .hero-img {
+    width: 320px;
+    max-height: 320px;
+    border-radius: 14px;
+    margin-left: 40px;
+    box-shadow: 0 6px 18px rgba(36, 48, 84, 0.20);
+    object-fit: contain;
+  }
+}
+
+
+@media (max-width: 850px) {
+  .frontpage-hero {
+    flex-direction: column;
+    padding: 24px 16px 32px 16px;
+    text-align: center;
+
+    .hero-content {
+      flex-basis: auto;
+    }
+
+    .hero-img {
+      margin: 20px auto 0 auto;
+      width: 85vw;
+      max-height: none;
+    }
+  }
+}
+
+/* Router Content/Outlet Container - optional wrapper */
+main,
+.router-content,
+.main-content {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+/* Footer Styles */
+.footer {
+  flex-shrink: 0;
+  position: fixed; /* Stays at bottom */
+  bottom: 0;
+  width: 100%;
+  background: #f2f6fc;
+  color: #40506a;
+  text-align: center;
+  padding: 18px 0 8px 0;
+  border-top: 2px solid #eaf0fa;
+  font-size: 15.5px;
+  letter-spacing: 1.1px;
+  user-select: none;
+}
+
+/* Additionally important: make page-wrapper flex container column to stick footer */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content grows and pushes footer down */
+.content-wrapper {
+  flex: 1 0 auto;
+}
+

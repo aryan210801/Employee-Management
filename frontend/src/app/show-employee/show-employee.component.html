@@ -1,17 +1,8 @@
 <div class="main">
-  <header>
-    <div class="header-main-container">
-      <div class="header-data">ALL EMPLOYEES</div>
-    </div>
-  </header>
   <div class="content">
     <div class="table-wrapper">
-      <table
-        mat-table
-        [dataSource]="users"
-        class="mat-elevation-z2"
-        style="width: 100%"
-      >
+      <table mat-table [dataSource]="users" class="mat-elevation-z2" style="width: 100%">
+
         <!-- Firstname Column -->
         <ng-container matColumnDef="firstname">
           <th mat-header-cell *matHeaderCellDef>Firstname</th>
@@ -49,6 +40,7 @@
         <!-- Header and Row Declarations -->
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
       </table>
     </div>
   </div>

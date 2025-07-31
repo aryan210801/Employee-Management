@@ -25,7 +25,8 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
 })
 export class AddEmployeeComponent {
